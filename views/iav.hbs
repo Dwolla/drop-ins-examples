@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>dwolla.js</title>
+  <style type="text/css">
+    #c {
+      background: black;
+      max-width: 800px;
+      margin: 50px auto 20px;
+      padding: 10px;
+    }
+
+    #c iframe {
+      background: white;
+    }
+
+    #logs,
+    #states {
+      max-width: 800px;
+      padding: 10px;
+      margin: auto;
+    }
+
+    #states h3,
+    #logs h3 {
+      font-family: monospace;
+    }
+
+    #states p,
+    #logs p {
+      font-family: monospace;
+      color: #666;
+    }
+
+    #states p:not(:last-of-type) {
+      display: none;
+    }
+
+    #controls {
+      max-width: 800px;
+      padding: 10px;
+      margin: auto;
+    }
+
+    #token {
+      width: 100%;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    td {
+      font-family: monospace;
+    }
+
+    input {
+      font-size: 20px;
+    }
+  </style>
+  <script src="/dwolla-web.js"></script>
+</head>
+
+<body>
+  <div id="controls">
+    <table>
+      <tr>
+        <td>environment:</td>
+        <td>micro deposits:</td>
+        <td>fallback to md:</td>
+        <td>back button:</td>
+        <td>token:</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+          <select name="environment">
+            <option value="devlocal">devlocal</option>
+            <option value="devint">devint</option>
+            <option value="uat">uat</option>
+            <option value="prod">prod</option>
+          </select>
+        </td>
+        <td>
+          <select name="micro-deposits">
+            <option value="false">false</option>
+            <option value="true">true</option>
+          </select>
+        </td>
+        <td>
+          <select name="fallback-to-micro-deposits">
+            <option value="false">false</option>
+            <option value="true">true</option>
+          </select>
+        </td>
+        <td>
+          <select name="back-button">
+            <option value="false">false</option>
+            <option value="true">true</option>
+          </select>
+        </td>
+        <td>
+          <input type="text" id="token">
+        </td>
+        <td>
+          <input type="button" id="start" value="Start">
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="c"></div>
+
+  <div id="states">
+    <h3>State</h3>
+  </div>
+
+  <div id="logs">
+    <h3>Logs</h3>
+  </div>
+
+  <script type="text/javascript">
+    var c = document.getElementById('c'),
+      logs = document.getElementById('logs'),
+      states = document.getElementById('states'),
+      start = document.getElementById('start'),
+      token = document.getElementById('token'),
+      dwollaUrl = document.getElementById('dwollaUrl'),
+      environment = document.querySelector('[name=environment]'),
+      microDeposits = document.querySelector('[name=micro-deposits]'),
+      backButton = document.querySelector('[name=back-button]'),
+      fallbackToMicroDeposits = document.querySelector('[name=fallback-to-micro-deposits]')
+
+    function log(message) {
+      var el = document.createElement('p')
+      el.textContent = message
+      logs.appendChild(el)
+    }
+
+    function handleState(newState) {
+      var el = document.createElement('p')
+      el.textContent = JSON.stringify(newState)
+      states.appendChild(el)
+    }
+
+    function onMessage(e) {
+      // log('Message received: ' + JSON.stringify(e.data))
+    }
+
+    start.addEventListener('click', function () {
+      c.textContent = ''
+      handleState(null)
+      dwolla.configure(environment.value)
+      dwolla.iav.start(token.value, {
+        container: 'c',
+        stylesheets: [
+          'http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext',
+          'http://localhost:4041/styles/iav.css'
+        ],
+        microDeposits: (microDeposits.value === 'true'),
+        fallbackToMicroDeposits: (fallbackToMicroDeposits.value === 'true'),
+        backButton: (backButton.value === 'true'),
+        subscriber: handleState
+      }, function (err, res) {
+        log('Error: ' + JSON.stringify(err) + ' -- Response: ' + JSON.stringify(res))
+      })
+      log('Started: ' + token.value)
+    })
+
+    window.addEventListener('message', onMessage)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+.dwolla-iav-text-box,
+.dwolla-iav-button,
+.dwolla-iav-header,
+.dwolla-iav-text,
+.dwolla-iav-link,
+.dwolla-iav-error,
+.dwolla-iav-label {
+  font-family: Open Sans;
+}
+
+.dwolla-iav-header {
+  font-size: 20px;
+  font-family: Open Sans;
+  font-weight: 300;
+  color: #3e4e67;
+  line-height: 150%;
+}
+
+h5.dwolla-iav-header {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.dwolla-iav-label {
+  font-size: 11px;
+  font-weight: normal;
+  color: #8393aa;
+}
+
+#account-select > li > .dwolla-iav-label {
+  font-size: 14px;
+}
+
+.dwolla-iav-text-box {
+  box-shadow: none;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #c9d3e0;
+  padding: 12px 0;
+}
+
+.dwolla-iav-text-box:focus {
+  border-bottom-color: #2395d6;
+}
+
+.dwolla-iav-text-box[id^="BankAccountName"]::placeholder {
+  color: #8393aa;
+}
+
+.dwolla-iav-link {
+  color: #2395d6;
+  font-weight: normal;
+}
+
+.dwolla-iav-link:hover {
+  color: #2395d6;
+}
+
+.dwolla-iav-button {
+  background: #ff7404;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+  color: white;
+  border-radius: 3px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.dwolla-iav-back-button {
+  color: #8393aa;
+  font-size: 14px;
+  border: 1px solid #aab7c8;
+  padding: 10px 16px;
+  background: white;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.dwolla-iav-button:hover {
+  background: #ff821e;
+}
+
+.dwolla-iav-radio-hover {
+  background-color: #aab7c8;
+}
+
+.dwolla-iav-radio-selected {
+  background-color: #8393aa;
+}
+
+.dwolla-iav-header.list-search__results-header {
+  font-size: 11px;
+  color: #8393aa;
+  text-transform: uppercase;
+}
+
+.bank-search-results {
+  border: 1px solid #c9d3e0 !important;
+  border-radius: 3px;
+  margin-top: 10px;
+  padding: 20px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.js-list-search__found-footer {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.js-list-search__found-footer p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.js-list-search__found-footer .dwolla-iav-button {
+  padding: 0;
+  background: 0;
+  border: 0;
+  color: #2395d6;
+  box-shadow: none;
+  text-transform: none;
+  font-weight: bold;
+  margin: 0 0 0 6px;
+}
+
+small.dwolla-iav-text {
+  color: #8393aa;
+  font-size: 12px;
+}
+
+p.disclaimer {
+  font-size: 12px;
+  font-weight: normal;
+  color: #8393aa;
+}
+
+.popular-list__item {
+  border: 1px solid #d9dbde;
+  border-radius: 3px;
+  margin: 6px 0;
+  padding: 0px 18px;
+}
