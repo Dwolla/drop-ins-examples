@@ -1,8 +1,13 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const axios = require("axios");
-const qs = require("query-string");
+const Client = require("dwolla-v2").Client;
+
+const dwolla = new Client({
+  key: "",
+  secret: "",
+  environment: "sandbox", // defaults to 'production'
+});
 
 const ENVIRONMENT = {
   sandbox: "https://api-sandbox.dwolla.com",
@@ -21,53 +26,61 @@ app.get("/", function (req, res) {
 });
 
 app.get("/create-customer", function (req, res) {
-  generateAccessToken().then((aRes) => {
-    generateClientToken(aRes.access_token, "customer.create").then((cRes) => {
+    generateClientToken("customer.create").then((cRes) => {
       res.status(200).render(`create-customer`, { token: cRes.token });
     });
-  });
+});
+
+app.get("/upgrade-customer", function (req, res) {
+  generateClientToken("customer.upgrade", "0c8bafa5-45ab-4282-8916-cae984ceb147").then(
+    (cRes) => {
+      const customer = {
+        // This body is hard coded, and will need to be replaced in production
+        id: "0c8bafa5-45ab-4282-8916-cae984ceb147",
+        firstName: "jack",
+        lastName: "hodgins",
+        email: "email12@email.com",
+      };
+      res
+        .status(200)
+        .render(`upgrade-customer`, { customer, token: cRes.token });
+    }
+  );
 });
 
 app.get("/upload-document", function (req, res) {
-  generateAccessToken().then((aRes) => {
+
+  dwolla.post("customers", {
+    // This body is hard coded, and will need to be replaced in production
+    type: "personal",
+    firstName: "jack",
+    lastName: "hodgins",
+    email: `${Math.random()}email12@email.com`,
+    address1: "726 Evergreen Terrace",
+    city: "Springfield",
+    state: "OR",
+    postalCode: "32817",
+    dateOfBirth: "1990-03-22",
+    ssn: "1111"
+  })
+  
+  .then(function(customerRes){
+    const customerId = customerRes.headers.get("location").split("/").slice(-1)[0]
     generateClientToken(
-      aRes.access_token,
       "customer.documents.create",
-      "db8b240b-f1a9-4f28-b378-113bcaa50cb2"
+      customerId
     ).then((cRes) => {
       const customer = {
-        id: "db8b240b-f1a9-4f28-b378-113bcaa50cb2",
-        firstName: "",
-        lastName: "",
-        email: "",
+        id: customerId,
       };
       res.status(200).render(`document`, { customer, token: cRes.token });
-    });
-  });
-});
-
-app.get("/update-customer", function (req, res) {
-  generateAccessToken().then((aRes) => {
-    generateClientToken(aRes.access_token, "customer.update", "").then(
-      (cRes) => {
-        const customer = {
-          id: "",
-          firstName: "",
-          lastName: "",
-          email: "",
-        };
-        res
-          .status(200)
-          .render(`update-customer`, { customer, token: cRes.token });
-      }
-    );
-  });
+    });     
+  })
 });
 
 app.get("/personal-vcr-flow", function (req, res) {
-  generateAccessToken().then((aRes) => {
     generateClientToken(
-      aRes.access_token,
+      // TODO: Replace with customer.upgrade once server updated
       "customer.update",
       "customerId"
     ).then((cRes) => {
@@ -79,66 +92,22 @@ app.get("/personal-vcr-flow", function (req, res) {
       };
       res.status(200).render(`personal-vcr`, { customer, token: cRes.token });
     });
-  });
+
 });
 
 app.get("/balance-display", function (req, res) {
-  generateAccessToken().then((aRes) => {
     generateClientToken(
-      aRes.access_token,
       "customer.fundingsources.read",
-      "db8b240b-f1a9-4f28-b378-113bcaa50cb2"
+      "640e5978-c099-45e2-b3c6-3eef9dd773f7"
     ).then((cRes) => {
       const customer = {
-        id: "db8b240b-f1a9-4f28-b378-113bcaa50cb2",
-        firstName: "",
-        lastName: "",
-        email: "",
+        id: "640e5978-c099-45e2-b3c6-3eef9dd773f7",
+        firstName: "mya",
+        lastName: "mya",
+        email: "mya@mya.com",
       };
       res.status(200).render(`balance`, { customer, token: cRes.token });
     });
-  });
-});
-
-app.get("/payin-flow", function (req, res) {
-  const body = {
-    action: "customer.transfers.send",
-    _links: {
-      customer: {
-        href:
-          "http://localhost:17188/customers/db8b240b-f1a9-4f28-b378-113bcaa50cb2",
-        type: "application/vnd.dwolla.v1.hal+json",
-        "resource-type": "customer",
-      },
-      destination: {
-        href:
-          "http://localhost:17188/funding-sources/35ee455d-eb79-4b42-b523-00a6e721143a",
-        type: "application/vnd.dwolla.v1.hal+json",
-        "resource-type": "funding-source",
-      },
-    },
-    amount: {
-      currency: "USD",
-      value: "16.91",
-    },
-  };
-  generateAccessToken().then((aRes) => {
-    generateClientTokenWithBody(aRes.access_token, body).then((cRes) => {
-      res.status(200).render(`payin`, { blob: cRes.blob, token: cRes.token });
-    });
-  });
-});
-
-app.get("/iav", function (req, res) {
-  res.status(200).render("iav");
-});
-
-app.get("/dwolla-web.js", function (req, res) {
-  var component = path.join(
-    __dirname,
-    "../../../packages/dwolla-web/dist/browser/dwolla-web.js"
-  );
-  res.sendFile(component);
 });
 
 app.get("/styles/:sheet", function (req, res) {
@@ -146,15 +115,13 @@ app.get("/styles/:sheet", function (req, res) {
 });
 
 app.post("/tokenUrl", function (req, res) {
-  generateAccessToken().then((aRes) => {
-    generateClientTokenWithBody(aRes.access_token, req.body).then((cRes) => {
+    generateClientTokenWithBody(req.body).then((cRes) => {
       res.send({ token: cRes.token });
     });
-  });
 });
 
-function generateClientToken(token, action, customerId) {
-  const url = `${ENVIRONMENT[env]}/client-tokens`;
+function generateClientToken(action, customerId) {
+  const url = `/client-tokens`;
   const body = {
     action: action,
   };
@@ -167,63 +134,29 @@ function generateClientToken(token, action, customerId) {
     };
   }
 
-  return axios
-    .post(url, body, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-        Accept: "application/vnd.dwolla.v1.hal+json",
-      },
-    })
+  return dwolla
+    .post(url, body)
     .then((response) => {
-      return response.data;
+      return response.body;
     })
     .catch((error) => {
       return error;
     });
 }
 
-function generateClientTokenWithBody(token, body) {
-  const url = `${ENVIRONMENT[env]}/client-tokens`;
+function generateClientTokenWithBody(body) {
+  const url = `/client-tokens`;
 
-  return axios
-    .post(url, body, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-        Accept: "application/vnd.dwolla.v1.hal+json",
-      },
-    })
+  return dwolla
+    .post(url, body)
     .then((response) => {
-      return response.data;
+      return response.body;
     })
     .catch((error) => {
       return error;
     });
 }
 
-function generateAccessToken() {
-  const url = `${ENVIRONMENT[env]}/token`;
-  const clientId = "";
-  const clientSecret = "";
-  const authHeader =
-    "Basic " +
-    new Buffer(clientId + ":" + clientSecret, "UTF-8").toString("base64");
-
-  return axios
-    .post(url, qs.stringify({ grant_type: "client_credentials" }), {
-      headers: {
-        Authorization: authHeader,
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    })
-    .then((response) => {
-      return response.data;
-    })
-    .catch(() => {
-      return "err";
-    });
-}
 
 app.listen(port, () =>
   console.log(`Example app listening at http://localhost:${port}`)

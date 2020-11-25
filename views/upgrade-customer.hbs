@@ -18,11 +18,11 @@
     </style>
     <script src="//cdn.dwolla.com/v2/dwolla-web.js"></script>
     <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/update.css">
+    <link rel="stylesheet" href="/styles/upgrade.css">
     <script>
         dwolla.configure({
               environment: "sandbox",
-            styles: "/styles/update.css",
+            styles: "/styles/upgrade.css",
             token: () => Promise.resolve(`{{ token }}`),
             success: (res) => Promise.resolve(),
             error: (err) => Promise.resolve()
@@ -35,7 +35,7 @@
         <div class="banner-image"><img alt="Dwolla Logo"
                 src="https://slack-integration-sandbox.dwolla.com/images/dwolla-logo-white.svg"></div>
         <div class="container-sm">
-            <h3>Update Customer</h3>
+            <h3>Upgrade Customer</h3>
             <div class="orange-border">
                 <dwolla-customer-update customerId="{{ customer.id }}" firstName="{{ customer.firstName }}"
                     lastName="{{ customer.lastName }}" email="{{ customer.email }}" terms="https://docs.dwolla.com/"
@@ -45,14 +45,14 @@
         </div>
         <div class="container-sm">
             <div class="code-container">
-                <h3>Updating A Customer With Drop-Ins (Copy + Paste Integration)</h3>
+                <h3>Upgrading A Customer With Drop-Ins (Copy + Paste Integration)</h3>
                 <pre>
     &lt;script type="text/javascript" src="cdn.dwolla.com/2/dwolla.js"&gt;&lt;/script&gt;
     &lt;script type="module" src="cdn.dwolla.com/2/dwolla-components.js"&gt;&lt;/script&gt;
     &lt;script&gt;
         dwolla.configure({
             environment: "sandbox",
-            styles: "/styles/update-custom.css",
+            styles: "/styles/upgrade-custom.css",
             token: () => Promise.resolve("MY_TOKEN"),
             success: (res) => Promise.resolve(res),
             error: (err) => Promise.resolve(err),
