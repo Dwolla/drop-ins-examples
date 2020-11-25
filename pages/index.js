@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const axios = require("axios");
+const dwolla = require("dwolla");
 const qs = require("query-string");
 
 const ENVIRONMENT = {
@@ -167,7 +167,7 @@ function generateClientToken(token, action, customerId) {
     };
   }
 
-  return axios
+  return dwolla
     .post(url, body, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -186,7 +186,7 @@ function generateClientToken(token, action, customerId) {
 function generateClientTokenWithBody(token, body) {
   const url = `${ENVIRONMENT[env]}/client-tokens`;
 
-  return axios
+  return dwolla
     .post(url, body, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -210,7 +210,7 @@ function generateAccessToken() {
     "Basic " +
     new Buffer(clientId + ":" + clientSecret, "UTF-8").toString("base64");
 
-  return axios
+  return dwolla
     .post(url, qs.stringify({ grant_type: "client_credentials" }), {
       headers: {
         Authorization: authHeader,
