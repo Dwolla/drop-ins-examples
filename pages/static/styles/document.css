@@ -1,0 +1,203 @@
+.dwolla-document-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 470px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    background: #202033;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.1),
+      inset 0px 1px 0px 1px rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .dwolla-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 470px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    background: #202033;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.1),
+      inset 0px 1px 0px 1px rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .dwolla-document-choose input[type="file"] {
+    display: none;
+  }
+  
+  .dwolla-file-name {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    height: 40px;
+    width: 470px;
+  }
+  
+  .dwolla-document-label {
+    text-align: left;
+    display: inline-block;
+    width: 470px;
+  }
+  
+  .dwolla-document-chooser {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: -5px;
+    padding: 10px 20px;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.05);
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: #354153;
+    background: rgba(201, 211, 224, 0.6);
+    border: 1px solid #c9d3e0;
+  }
+  
+  .dwolla-document-type {
+    border: 0;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 10px 0px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+  }
+  
+  .dwolla-document-type select {
+    border: 1px solid #c9d3e0;
+    width: 470px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #354153;
+    background-color: #fff;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.05);
+  }
+  
+  .dwolla-document-type option {
+    font-family: sans-serif;
+    font-weight: 400;
+  }
+  
+  .dwolla-document-name-display {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #c9d3e0;
+    width: 314px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #354153;
+    background-color: #fff;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.05);
+  }
+  
+  .dwolla-document-description {
+    color: #52627b;
+    text-align: left;
+    padding: 5px 0px;
+  }
+  
+  #dwolla-success {
+    background-color: #ddf0e0;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border-color: #58b467;
+    border-style: solid;
+    border-width: 1px;
+  }
+  
+  #dwolla-info {
+    background-color: #ddf0e0;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(54, 136, 207, 0.5);
+  }
+  
+  #dwolla-error {
+    background-color: #f7ebee;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border-color: #cf5473;
+    border-style: solid;
+    border-width: 1px;
+  }
+  
+  .dwolla-link {
+    color: #1d6cd1;
+  }
+  
+  .dwolla-loading {
+    background-color: #5e4e76;
+    position: relative;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-color: #5e4e76;
+    }
+    50% {
+      background-color: #8393aa;
+    }
+    100% {
+      background-color: #5e4e76;
+    }
+  }
+  
+  .hide-class {
+    display: none;
+  }
+  

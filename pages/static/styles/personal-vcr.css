@@ -1,0 +1,468 @@
+.dwolla-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 120px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #202033;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.1),
+      inset 0px 1px 0px 1px rgba(255, 255, 255, 0.06);
+  }
+  
+  .dwolla-vcr-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 470px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #202033;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.1),
+      inset 0px 1px 0px 1px rgba(255, 255, 255, 0.06);
+  }
+  
+  .dwolla-vcr-submit input[type="submit"]:disabled {
+    background: #dddddd;
+    cursor: default;
+  }
+  
+  .dwolla-customer-input {
+    border: 1px solid #c9d3e0;
+    cursor: pointer;
+    display: inline-block;
+    transition: box-shadow 0.5s, background-color 0.5s, border 0.5s;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    text-decoration: none;
+    background-color: #fff;
+    color: #5e4e76;
+  }
+  
+  .dwolla-width-1 {
+    width: 470px;
+  }
+  
+  .dwolla-width-1 input[type="text"] {
+    padding: 10px 0px 10px 15px;
+    width: 455px;
+  }
+  
+  .dwolla-width-2 {
+    width: 228px;
+  }
+  
+  .dwolla-width-2 input[type="text"] {
+    padding: 10px 0px 10px 15px;
+    width: 213px;
+  }
+  
+  .dwolla-width-3 {
+    width: 147px;
+  }
+  
+  .dwolla-width-3 input[type="text"] {
+    padding: 10px 0px 10px 15px;
+    width: 133px;
+  }
+  
+  ::placeholder {
+    color: #52627b;
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder {
+    color: #52627b;
+  }
+  
+  ::-ms-input-placeholder {
+    color: #52627b;
+  }
+  
+  .dwolla-customer-input[type="text"]:disabled {
+    background: #dddddd;
+    cursor: default;
+  }
+  
+  #dwolla-success {
+    background-color: #ddf0e0;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border-color: #58b467;
+    border-style: solid;
+    border-width: 1px;
+  }
+  
+  #dwolla-info {
+    background: rgba(54, 136, 207, 0.15);
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(54, 136, 207, 0.5);
+  }
+  
+  #dwolla-error {
+    background-color: #f7ebee;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border-color: #cf5473;
+    border-style: solid;
+    border-width: 1px;
+  }
+  
+  .dwolla-link {
+    color: #1d6cd1;
+  }
+  
+  .dwolla-customer-tos {
+    width: 100%;
+    height: 80px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 20px;
+  }
+  
+  .dwolla-customer-checkbox {
+    width: 5%;
+    height: 80px;
+    display: inline;
+    float: left;
+  }
+  
+  .dwolla-customer-text {
+    width: 91%;
+    height: 80px;
+    display: inline;
+    float: left;
+    margin-left: 10px;
+  }
+  
+  .dwolla-input-container {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 0px 0px;
+  }
+  
+  .dwolla-input-container label {
+    text-align: left;
+    display: block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .dwolla-loading {
+    background-color: #5e4e76;
+    position: relative;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-color: #5e4e76;
+    }
+    50% {
+      background-color: #8393aa;
+    }
+    100% {
+      background-color: #5e4e76;
+    }
+  }
+  
+  .dwolla-document-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 120px;
+    margin-top: 45px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    transition: box-shadow 0.5s, background-color 0.5s, border 0.5s;
+    border-radius: 3px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #5e4e76;
+  }
+  
+  .dwolla-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 120px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    transition: box-shadow 0.5s, background-color 0.5s, border 0.5s;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #5e4e76;
+  }
+  
+  .dwolla-document-choose input[type="file"] {
+    display: none;
+  }
+  
+  .dwolla-document-type {
+    border: 0;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding: 10px 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  
+  .dwolla-document-type select {
+    border: 0;
+    cursor: pointer;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    transition: box-shadow 0.5s, background-color 0.5s, border 0.5s;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    color: #5e4e76;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(53, 65, 83, 0.12),
+      0 0 2px 0 rgba(53, 65, 83, 0.12);
+  }
+  
+  .dwolla-document-type label {
+    border: 0;
+    cursor: pointer;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #5e4e76;
+  }
+  
+  .dwolla-document-name-display {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #c9d3e0;
+    width: 314px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #354153;
+    background-color: #fff;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.05);
+  }
+  
+  #dwolla-personal-vcr {
+    height: 700px;
+  }
+  
+  .hide-class {
+    display: none;
+  }
+  
+  .dwolla-span-container {
+    display: inline-block;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 0px 0px;
+  }
+  
+  .dwolla-span-container label {
+    text-align: center;
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+  }
+  
+  .dwolla-document-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 470px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    background: #202033;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.1),
+      inset 0px 1px 0px 1px rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .dwolla-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 470px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    background: #202033;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.1),
+      inset 0px 1px 0px 1px rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .dwolla-document-choose input[type="file"] {
+    display: none;
+  }
+  
+  .dwolla-file-name {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    height: 40px;
+    width: 470px;
+  }
+  
+  .dwolla-document-label {
+    text-align: left;
+    display: inline-block;
+    width: 470px;
+  }
+  
+  .dwolla-document-chooser {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: -5px;
+    padding: 10px 20px;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.05);
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: #354153;
+    background: rgba(201, 211, 224, 0.6);
+    border: 1px solid #c9d3e0;
+  }
+  
+  .dwolla-document-type {
+    border: 0;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 10px 0px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+  }
+  
+  .dwolla-document-type select {
+    border: 1px solid #c9d3e0;
+    width: 470px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #354153;
+    background-color: #fff;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.05);
+  }
+  
+  .dwolla-document-type option {
+    font-family: sans-serif;
+    font-weight: 400;
+  }
+  
+  .dwolla-document-description {
+    color: #52627b;
+    text-align: left;
+    padding: 5px 0px;
+  }
+  

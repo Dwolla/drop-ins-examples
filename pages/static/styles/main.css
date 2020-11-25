@@ -1,0 +1,74 @@
+.container {
+    height: 1420px;
+    background-color: #f4f7fb;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #354153;
+  }
+  
+  .container-sm {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .container-menu {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .menu-item a {
+    margin: 10px;
+    padding: 10px;
+    border-style: solid;
+    border-color: white;
+    float: left;
+    color: #354153;
+    background-color: white;
+    text-decoration: none;
+  }
+  
+  .orange-border {
+    padding: 20px;
+    width: 470px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .banner-image {
+    width: 169px;
+    padding: 10px;
+    height: 80px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  
+  .code-container {
+    border-radius: 5px;
+    text-align: left;
+    margin: 0 auto 5px auto;
+    color: #354153;
+    width: 960px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+    background: #fff;
+    padding: 5px 10px;
+    box-shadow: 0 2px 4px 0 rgba(53, 65, 83, 0.12),
+      0 0 2px 0 rgba(53, 65, 83, 0.12);
+  }
+  
+  .pre {
+    width: 740px;
+    font-family: "monospace";
+    font-weight: 300;
+    text-align: left;
+  }
+  

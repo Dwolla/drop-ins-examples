@@ -1,0 +1,190 @@
+.dwolla-payin {
+    width: 470px;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    padding: 25px;
+  }
+  
+  .dwolla-payin-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 470px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    transition: box-shadow 0.5s, background-color 0.5s, border 0.5s;
+    border-radius: 3px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2d2d48;
+    box-shadow: 0 2px 4px 0 rgba(53, 65, 83, 0.12),
+      0 0 2px 0 rgba(53, 65, 83, 0.12);
+  }
+  
+  .dwolla-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 470px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    transition: box-shadow 0.5s, background-color 0.5s, border 0.5s;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #5e4e76;
+    box-shadow: 0 2px 4px 0 rgba(53, 65, 83, 0.12),
+      0 0 2px 0 rgba(53, 65, 83, 0.12);
+  }
+  
+  .dwolla-document-choose input[type="file"] {
+    display: none;
+  }
+  
+  .dwolla-amount {
+    color: #5e4e76;
+    width: 470px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  
+  .dwolla-amount-label {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #212b36;
+    width: 470px;
+    display: inline-block;
+  }
+  
+  .dwolla-funding-source-label {
+    float: left;
+    text-align: left;
+    color: #5e4e76;
+    width: 470px;
+  }
+  
+  .dwolla-amount-display {
+    color: #354153;
+    width: 470px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 48px;
+    margin-top: 20px;
+    font-weight: 300;
+    height: 60px;
+  }
+  
+  .dwolla-funding-sources {
+    margin-top: 20px;
+  }
+  
+  .dwolla-funding-sources select {
+    width: 470px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    transition: box-shadow 0.5s, background-color 0.5s, border 0.5s;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #5e4e76;
+    background-color: #fff;
+    border: 1px solid #c9d3e0;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 0px rgba(22, 29, 37, 0.05);
+    border-radius: 3px;
+  }
+  
+  .dwolla-payin-title {
+    text-align: left;
+    padding: 5px;
+    margin-bottom: 20px;
+    width: 320px;
+    color: #5e4e76;
+    font-size: 22px;
+    padding-left: 10px;
+  }
+  
+  #dwolla-success {
+    background-color: #ddf0e0;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border-color: #58b467;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 20px;
+  }
+  
+  #dwolla-info {
+    background-color: #ddf0e0;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(54, 136, 207, 0.5);
+    margin-bottom: 20px;
+  }
+  
+  #dwolla-error {
+    background-color: #f7ebee;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border-color: #cf5473;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 20px;
+  }
+  
+  .dwolla-loading {
+    background-color: #5e4e76;
+    position: relative;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  
+  .line {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 2px;
+    background-color: #5e4e76;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-color: #5e4e76;
+    }
+    50% {
+      background-color: #8393aa;
+    }
+    100% {
+      background-color: #5e4e76;
+    }
+  }
+  

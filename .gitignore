@@ -1,0 +1,14 @@
+# Node
+node_modules/
+
+# Yarn
+yarn-error.log
+
+# Lerna
+lerna-error.log
+
+# Webpack
+dist/
+
+# Next.js
+.next/

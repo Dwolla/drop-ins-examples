@@ -1,0 +1,204 @@
+.dwolla-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 120px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #202033;
+  }
+  
+  .dwolla-customer-submit input[type="submit"] {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 470px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #202033;
+  }
+  
+  .dwolla-customer-input {
+    border: 1px solid #c9d3e0;
+    cursor: pointer;
+    display: inline-block;
+    transition: box-shadow 0.5s, background-color 0.5s, border 0.5s;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    text-decoration: none;
+    background-color: #fff;
+    color: #5e4e76;
+  }
+  
+  .dwolla-width-1 {
+    width: 470px;
+  }
+  
+  .dwolla-width-1 input[type="text"] {
+    padding: 10px 0px 10px 15px;
+    width: 455px;
+  }
+  
+  .dwolla-width-2 {
+    width: 228px;
+  }
+  
+  .dwolla-width-2 input[type="text"] {
+    padding: 10px 0px 10px 15px;
+    width: 213px;
+  }
+  
+  .dwolla-width-3 {
+    width: 147px;
+  }
+  
+  .dwolla-width-3 input[type="text"] {
+    padding: 10px 0px 10px 15px;
+    width: 133px;
+  }
+  
+  .margin-bump {
+    margin-right: 10px !important;
+  }
+  
+  ::placeholder {
+    color: #52627b;
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder {
+    color: #52627b;
+  }
+  
+  ::-ms-input-placeholder {
+    color: #52627b;
+  }
+  
+  #dwolla-success {
+    background-color: #ddf0e0;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border-color: #58b467;
+    border-style: solid;
+    border-width: 1px;
+  }
+  
+  #dwolla-info {
+    background-color: #ddf0e0;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(54, 136, 207, 0.5);
+  }
+  
+  #dwolla-error {
+    background-color: #f7ebee;
+    color: #354153;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    border-color: #cf5473;
+    border-style: solid;
+    border-width: 1px;
+  }
+  
+  .dwolla-link {
+    color: #1d6cd1;
+  }
+  
+  .dwolla-customer-tos {
+    width: 100%;
+    height: 80px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 20px;
+  }
+  
+  .dwolla-customer-checkbox {
+    width: 5%;
+    height: 80px;
+    display: inline;
+    float: left;
+  }
+  
+  .dwolla-customer-text {
+    width: 91%;
+    height: 80px;
+    display: inline;
+    float: left;
+    margin-left: 10px;
+  }
+  
+  .dwolla-loading {
+    background-color: #5e4e76;
+    position: relative;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  
+  .dwolla-input-container {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 0px 0px;
+  }
+  
+  .dwolla-input-container label {
+    text-align: left;
+    display: block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-color: #5e4e76;
+    }
+    50% {
+      background-color: #8393aa;
+    }
+    100% {
+      background-color: #5e4e76;
+    }
+  }
+  
+  .hide-class {
+    display: none;
+  }
+  
