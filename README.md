@@ -1,5 +1,5 @@
 # Dwolla Drop-in Examples
-This repo contains Dwolla Drop-in Components using Express. Examples include forms to Create an (Unverified Customer)[https://developers.dwolla.com/concepts/customer-types#unverified-customer], Upgrade an Unverified Customer to a (Verified Customer)[https://developers.dwolla.com/concepts/customer-types#verified-customer], Create a (Personal Verified Customer)[https://developers.dwolla.com/concepts/customer-types#personal-verified-customer], Upload Documents, and View a Verified Customer's Balance. 
+This repo contains Dwolla Drop-in Components using Express. Examples include forms to Create an [Unverified Customer](https://developers.dwolla.com/concepts/customer-types#unverified-customer), Upgrade an Unverified Customer to a [Verified Customer](https://developers.dwolla.com/concepts/customer-types#verified-customer), Create a [Personal Verified Customer](https://developers.dwolla.com/concepts/customer-types#personal-verified-customer), Upload Documents, and View a Verified Customer's Balance. 
 
 Additional drop-in components will be added to this repo as new ones are released
 
@@ -20,34 +20,34 @@ By default, the elements within your specified container are responsive to any c
 
 ### Create a Customer
 
-This drop-in component form creates an (Unverified Customer)[https://developers.dwolla.com/concepts/customer-types#unverified-customer]
+This drop-in component form creates an [Unverified Customer](https://developers.dwolla.com/concepts/customer-types#unverified-customer)
 
-!(create_a_customer)[/images/create_a_customer.png]
+![create_a_customer](/images/create_a_customer.png)
 
 ### Upgrade a Customer
 
-This drop-in component form upgrades an Unverified Customer to a (Verified Customer)[https://developers.dwolla.com/concepts/customer-types#verified-customer]
+This drop-in component form upgrades an Unverified Customer to a [Verified Customer](https://developers.dwolla.com/concepts/customer-types#verified-customer)
 
-!(upgrade_a_customer)[/images/upgrade_customer.png]
+![upgrade_a_customer](/images/upgrade_customer.png)
 
 ### Personal VCR
 
-This drop-in component form creates a (Verified Customer)[https://developers.dwolla.com/concepts/customer-types#verified-customer]
+This drop-in component form creates a [Verified Customer](https://developers.dwolla.com/concepts/customer-types#verified-customer)
 
-!(personal_vcr)[/images/create_pvc.png]
+![personal_vcr](/images/create_pvc.png)
 
 ### Upload Documents
 
 This drop-in component let's a Personal Verified Customer to upload their government issued document
 
-!(upload_document)[/images/upload_document.png]
+![upload_document](/images/upload_document.png)
 
 
 ### Balance Display
 
 This drop-in component let's a Personal Verified Customer view their balance.
 
-!(balance_display)[/images/balance_display.png]
+![balance_display](/images/balance_display.png)
 
 
 ## Where to find the docs
@@ -56,7 +56,7 @@ Visit our Guide or API docs for more additional information.
 
 ## Support
 
-Support queries can be directed to our (Developer Forum)[https://discuss.dwolla.com/].
+Support queries can be directed to our [Developer Forum](https://discuss.dwolla.com/).
 
 ## Contributing and Reporting Bugs
 
