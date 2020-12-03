@@ -22,32 +22,32 @@ By default, the elements within your specified container are responsive to any c
 
 This drop-in component form creates an (Unverified Customer)[https://developers.dwolla.com/concepts/customer-types#unverified-customer]
 
-![create_a_customer](/images/create_a_customer.png)
+!(create_a_customer)[/images/create_a_customer.png]
 
 ### Upgrade a Customer
 
 This drop-in component form upgrades an Unverified Customer to a (Verified Customer)[https://developers.dwolla.com/concepts/customer-types#verified-customer]
 
-![upgrade_a_customer](/images/upgrade_customer.png)
+!(upgrade_a_customer)[/images/upgrade_customer.png]
 
 ### Personal VCR
 
 This drop-in component form creates a (Verified Customer)[https://developers.dwolla.com/concepts/customer-types#verified-customer]
 
-![personal_vcr](/images/create_pvc.png)
+!(personal_vcr)[/images/create_pvc.png]
 
 ### Upload Documents
 
 This drop-in component let's a Personal Verified Customer to upload their government issued document
 
-![upload_document](/images/upload_document.png)
+!(upload_document)[/images/upload_document.png]
 
 
 ### Balance Display
 
 This drop-in component let's a Personal Verified Customer view their balance.
 
-![balance_display](/images/balance_display.png)
+!(balance_display)[/images/balance_display.png]
 
 
 ## Where to find the docs
