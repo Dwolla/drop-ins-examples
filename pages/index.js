@@ -32,14 +32,14 @@ app.get("/create-customer", function (req, res) {
 });
 
 app.get("/upgrade-customer", function (req, res) {
-  generateClientToken("customer.upgrade", "0c8bafa5-45ab-4282-8916-cae984ceb147").then(
+  generateClientToken("customer.update", "0c8bafa5-45ab-4282-8916-cae984ceb147").then(
     (cRes) => {
       const customer = {
         // This body is hard coded, and will need to be replaced in production
         id: "0c8bafa5-45ab-4282-8916-cae984ceb147",
-        firstName: "jack",
-        lastName: "hodgins",
-        email: "email12@email.com",
+        firstName: "Jane",
+        lastName: "Doe",
+        email: "email14@email.com",
       };
       res
         .status(200)
