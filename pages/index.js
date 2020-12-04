@@ -80,7 +80,6 @@ app.get("/upload-document", function (req, res) {
 
 app.get("/personal-vcr-flow", function (req, res) {
     generateClientToken(
-      // TODO: Replace with customer.upgrade once server updated
       "customer.update",
       "customerId"
     ).then((cRes) => {
