@@ -12,7 +12,7 @@ Additional drop-in components will be added to this repo as new ones are release
 
 Copy + Paste code related to the component you'd like to use in order to expediate your Dwolla API integration process, and save weeks of development work.
 
-You can also read our Drop-in Components blog series for a step by step guide on how to get started using the first five low-code components.
+You can also read our [Drop-in Components blog series](https://www.dwolla.com/updates/low-code-drop-in-components/) for a step by step guide on how to get started using the first five low-code components.
 
 ## Drop-ins UI
 
