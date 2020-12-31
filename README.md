@@ -1,7 +1,9 @@
 # Dwolla Drop-in Examples
 This repo contains Dwolla Drop-in Components using Express. Examples include forms to Create an [Unverified Customer](https://developers.dwolla.com/concepts/customer-types#unverified-customer), Upgrade an Unverified Customer to a [Verified Customer](https://developers.dwolla.com/concepts/customer-types#verified-customer), Create a [Personal Verified Customer](https://developers.dwolla.com/concepts/customer-types#personal-verified-customer), Upload Documents, and View a Verified Customer's Balance. 
 
-Additional drop-in components will be added to this repo as new ones are released
+Additional drop-in components will be added to this repo as new ones are released.
+
+Drop-in components are tools designed to assist with a Dwolla integration. As with any tool, it may not fit all desired use cases.
 
 ## Installation 
 
