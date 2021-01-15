@@ -18,11 +18,9 @@
     </style>
     <script src="//cdn.dwolla.com/v2/dwolla-web.js"></script>
     <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/personal-vcr.css">
     <script>
         dwolla.configure({
             environment: "sandbox",
-            styles: "/styles/personal-vcr.css",
             tokenUrl: () => Promise.resolve(`/tokenUrl`),
             success: (res) => Promise.resolve(),
             error: (err) => Promise.resolve()
@@ -35,9 +33,9 @@
         <div class="banner-image"><img alt="Dwolla Logo"
                 src="https://slack-integration-sandbox.dwolla.com/images/dwolla-logo-white.svg"></div>
         <div class="container-sm">
-            <h3>Create A Personal Verified Customer Record</h3>
+            <h3>Create A Business Verified Customer Record</h3>
             <div class="orange-border">
-                <dwolla-personal-vcr terms="https://docs.dwolla.com/" privacy="https://developers.dwolla.com/"> </dwolla-personal-vcr>
+                <dwolla-business-vcr terms="https://docs.dwolla.com/" privacy="https://developers.dwolla.com/"> </dwolla-personal-vcr>
             </div>
         </div>
         <div class="container-sm">
