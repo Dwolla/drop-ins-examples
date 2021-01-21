@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="32x32"
         href="https://cdn.dwolla.com/com/dist/images/favicons/favicon-32x32_a4dac4e7.png">
     <title>Dwolla</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400|Roboto:400,700&display=swap" rel="stylesheet">
     <style>
         body {
             text-align: center;
@@ -18,12 +18,11 @@
     </style>
     <script src="//cdn.dwolla.com/v2/dwolla-web.js"></script>
     <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/balance.css">
     <script>
         dwolla.configure({
             environment: "sandbox",
-            styles: "/styles/balance.css",
-            token: () => Promise.resolve(`{{ token }}`),
+            // styles: "/styles/business-vcr.css",
+            tokenUrl: "/tokenUrl",
             success: (res) => Promise.resolve(),
             error: (err) => Promise.resolve()
         });
@@ -35,29 +34,32 @@
         <div class="banner-image"><img alt="Dwolla Logo"
                 src="https://slack-integration-sandbox.dwolla.com/images/dwolla-logo-white.svg"></div>
         <div class="container-sm">
-            <h3>Balance Display</h3>
+            <h3>Create A Business Verified Customer Record</h3>
             <div class="orange-border">
-                <dwolla-balance-display customerId="{{customer.id}}"></dwolla-balance-display>
+                <dwolla-business-vcr terms="https://docs.dwolla.com/" privacy="https://developers.dwolla.com/" email="email22@gmail.com" firstName="Retry" lastName="Jackson">
+                </dwolla-business-vcr>
             </div>
         </div>
         <div class="container-sm">
             <div class="code-container">
-                <h3>Displaying User Balance With Drop-Ins (Copy + Paste Integration)</h3>
-
+                <h3>Creating A Business Customer With Drop-Ins (Copy + Paste Integration)</h3>
                 <pre>
     &lt;script type="text/javascript" src="cdn.dwolla.com/2/dwolla.js"&gt;&lt;/script&gt;
     &lt;script type="module" src="cdn.dwolla.com/2/dwolla-components.js"&gt;&lt;/script&gt;
     &lt;script&gt;
         dwolla.configure({
             environment: "sandbox",
-            styles: "styles/balance-custom.css",
-            token: () => Promise.resolve("MY_TOKEN"),
+            styles: "/styles/create-custom.css",
+            tokenUrl: "/tokenUrl",
             success: (res) => Promise.resolve(res),
             error: (err) => Promise.resolve(err),
         });
     &lt;/script&gt;
 
-    &lt;dwolla-balance-display customerId="customerId"&gt;&lt;/dwolla-balance-display&gt;
+    &lt;dwolla-business-vcr
+        terms="https://www.yourcompany.com/tos"
+        privacy="https://www.yourcompany.com/privacy"&gt;
+    &lt;/dwolla-business-vcr&gt;
 </pre>
             </div>
         </div>

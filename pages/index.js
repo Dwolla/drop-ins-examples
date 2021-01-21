@@ -53,7 +53,7 @@ app.get("/upload-document", function (req, res) {
   dwolla.post("customers", {
     // This body is hard coded, and will need to be replaced in production
     type: "personal",
-    firstName: "jack",
+    firstName: "document",
     lastName: "hodgins",
     email: `${Math.random()}email12@email.com`,
     address1: "726 Evergreen Terrace",
@@ -94,6 +94,10 @@ app.get("/personal-vcr-flow", function (req, res) {
 
 });
 
+app.get("/business-vcr-flow", function (req, res) {
+  res.status(200).render(`business-vcr`, {});
+});
+
 app.get("/balance-display", function (req, res) {
     generateClientToken(
       "customer.fundingsources.read",
@@ -107,6 +111,35 @@ app.get("/balance-display", function (req, res) {
       };
       res.status(200).render(`balance`, { customer, token: cRes.token });
     });
+});
+
+app.get("/payin-flow", function (req, res) {
+
+  //TODO: Replace with sample API call chain
+  const body = {
+    action: "customer.transfers.send",
+    _links: {
+      customer: {
+        href:
+          "http://api-sandbox.dwolla.com/customers/4594a375-ca4c-4220-a36a-fa7ce556449d",
+        type: "application/vnd.dwolla.v1.hal+json",
+        "resource-type": "customer",
+      },
+      destination: {
+        href:
+          "http://api-sandbox.dwolla.com/funding-sources/707177c3-bf15-4e7e-b37c-55c3898d9bf4",
+        type: "application/vnd.dwolla.v1.hal+json",
+        "resource-type": "funding-source",
+      },
+    },
+    amount: {
+      currency: "USD",
+      value: "1.01",
+    },
+  };
+  generateClientTokenWithBody(body).then((cRes) => {
+    res.status(200).render(`payin`, { blob: cRes.blob, token: cRes.token });
+  });
 });
 
 app.get("/styles/:sheet", function (req, res) {
