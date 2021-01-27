@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dwolla.js - Add a bank</title>
+    <style type="text/css">
+      body {
+        font-family: monospace;
+        max-width: 800px;
+        margin: 50px auto;
+      }
+      input,
+      select {
+        margin: 6px 0;
+        width: 100%;
+      }
+      input {
+        padding: 8px;
+        font-size: 18px;
+      }
+      select {
+        font-size: 24px;
+      }
+      #logs {
+        margin: 50px 0;
+      }
+      #logs div {
+        margin: 25px 0;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdn.dwolla.com/v2/dwolla-web.js"></script>
+  </head>
+  <body>
+    <form>
+      <div>
+        <select name="environment">
+          <option value="sandbox">sandbox</option>
+          <option value="production">production</option>
+        </select>
+      </div>
+
+      <div>
+        <input type="text" name="token" placeholder="fi token">
+      </div>
+
+      <div>
+        <input type="text" name="routingNumber" value="222222226" placeholder="routing number">
+      </div>
+
+      <div>
+        <input type="text" name="accountNumber" placeholder="account number">
+      </div>
+
+      <div>
+        <input type="text" name="name" placeholder="name">
+      </div>
+
+      <div>
+        <select name="type">
+          <option value="checking">checking</option>
+          <option value="savings">savings</option>
+        </select>
+      </div>
+
+      <div>
+        <input type="submit" value="Create funding source">
+      </div>
+    </form>
+
+    <div id="logs">
+    </div>
+
+    <script type="text/javascript">
+      $('form').on('submit', function() {
+        var $this = $(this),
+            getVal = _getVal.bind(null, $this)
+
+        dwolla.configure(getVal('environment'));
+
+        var token = getVal('token')
+        var params = {
+          routingNumber: getVal('routingNumber'),
+          accountNumber: getVal('accountNumber'),
+          type: getVal('type'),
+          name: getVal('name')
+        }
+
+        dwolla.fundingSources.create(token, params, callback)
+
+        return false
+      })
+
+      function callback(err, res) {
+        $div = $('<div />')
+        var logValue = {
+          error: err,
+          response: res
+        }
+        $div.text(JSON.stringify(logValue))
+
+        console.log(logValue)
+        $('#logs').append($div)
+      }
+
+      function _getVal($el, name) {
+        return $el.find('[name="' + name + '"]').val()
+      }
+    </script>
+  </body>
+</html>
