@@ -142,6 +142,14 @@ app.get("/payin-flow", function (req, res) {
   });
 });
 
+app.get("/iav", function (req, res) {
+  res.status(200).render("iav");
+});
+
+app.get("/add-bank", function (req, res) {
+  res.status(200).render("add-bank");
+});
+
 app.get("/styles/:sheet", function (req, res) {
   res.sendFile(path.join(__dirname, `/static/styles/${req.params.sheet}`));
 });
