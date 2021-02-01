@@ -52,6 +52,13 @@ This drop-in component let's a Personal Verified Customer view their balance.
 ![balance_display](/images/balance_display.png)
 
 
+### Pay-In
+
+This drop-in component can be used in order to transfer from a Customer funding source into your own funding source
+
+![pay_in](/images/pay_in.png)
+
+
 ## Where to find the docs
 
 Visit our Guide or API docs for more additional information. 
