@@ -42,23 +42,38 @@
         </div>
         <div class="container-sm">
             <div class="code-container">
-                <h3>Uploading A Document With Drop-Ins (Copy + Paste Integration)</h3>
-                <pre>
-    &lt;script type="text/javascript" src="cdn.dwolla.com/2/dwolla.js"&gt;&lt;/script&gt;
-    &lt;script type="module" src="cdn.dwolla.com/2/dwolla-components.js"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        dwolla.configure({
-            environment: "sandbox",
-            styles: "/styles/document-custom.css",
-            token: () => Promise.resolve("MY_TOKEN"),
-            success: (res) => Promise.resolve(res),
-            error: (err) => Promise.resolve(err),
-        });
-    &lt;/script&gt;
+            <h3>Uploading A Customer Document With Drop-Ins (Copy + Paste Integration)</h3>
+        <pre><code style="display:block; white-space:pre-wrap">
+        &lt;script type="text/javascript" src="//cdn.dwolla.com/v2/dwolla-web.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+            dwolla.configure({
+                environment: "sandbox",
+                styles: "/styles/document-custom.css",
+                token: () => Promise.resolve("MY_TOKEN"),
+                success: (res) => Promise.resolve(res),
+                error: (err) => Promise.resolve(err),
+            });
+        &lt;/script&gt;
 
-    &lt;dwolla-document-upload customerId="customerId"&gt;&lt;/dwolla-document-upload&gt;
-    
-</pre>
+        &lt;dwolla-document-upload customerId="customerId"
+        &gt;&lt;/dwolla-document-upload&gt;
+        </code></pre>
+            <h3>Uploading A Beneficial Owner Document With Drop-Ins (Copy + Paste Integration)</h3>
+        <pre><code style="display:block; white-space:pre-wrap">
+        &lt;script type="text/javascript" src="//cdn.dwolla.com/v2/dwolla-web.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+            dwolla.configure({
+                environment: "sandbox",
+                styles: "/styles/document-custom.css",
+                token: () => Promise.resolve("MY_TOKEN"),
+                success: (res) => Promise.resolve(res),
+                error: (err) => Promise.resolve(err),
+            });
+        &lt;/script&gt;
+
+        &lt;dwolla-document-upload customerId="customerId" ownerId="ownerId" type="beneficial-owner"
+        &gt;&lt;/dwolla-document-upload&gt;
+        </code></pre>    
             </div>
         </div>
     </div>
