@@ -22,7 +22,7 @@ By default, the elements within your specified container are responsive to any c
 
 ### Create a Customer
 
-This drop-in component form creates an [Unverified Customer](https://developers.dwolla.com/concepts/customer-types#unverified-customer)
+This drop-in component form creates both a [Receive Only Customer](https://developers.dwolla.com/concepts/customer-types#unverified-customer) (with `type= "receive-only`) and an [Unverified Customer](https://developers.dwolla.com/concepts/customer-types#unverified-customer)
 
 ![create_a_customer](/images/create_a_customer.png)
 
