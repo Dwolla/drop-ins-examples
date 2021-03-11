@@ -32,11 +32,23 @@ This drop-in component form upgrades an Unverified Customer to a [Verified Custo
 
 ![upgrade_a_customer](/images/upgrade_customer.png)
 
-### Personal VCR
+### Personal Verified Customer Record
 
-This drop-in component form creates a [Verified Customer](https://developers.dwolla.com/concepts/customer-types#verified-customer)
+This drop-in component form creates a [personal Verified Customer](https://developers.dwolla.com/concepts/customer-types#verified-customer)
 
 ![personal_vcr](/images/create_pvc.png)
+
+### Business Verified Customer Record
+
+This drop-in component handles onboarding [business Verified Customer](https://developers.dwolla.com/concepts/customer-types#verified-customer)
+
+![business_vcr](/images/create_bvcr.png)
+
+### Beneficial Owners
+
+This drop-in component can be used for adding Beneficial Owners to a business Verified Customer. 
+
+![beneficial_owners](/images/create_beneficial_owners.png)
 
 ### Upload Documents
 
