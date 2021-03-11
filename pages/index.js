@@ -98,6 +98,44 @@ app.get("/business-vcr-flow", function (req, res) {
   res.status(200).render(`business-vcr`, {});
 });
 
+app.get("/beneficial-owners", function (req, res) {
+  //TODO: Add option to submit customerId from input on client-side
+  dwolla.post("customers", {
+    // This body is hard coded, and will need to be replaced in production
+    firstName: 'Account',
+    lastName: 'Admin',
+    email: `${Math.random()}email@email.com`,
+    type: 'business',
+    address1: '99-99 33rd St',
+    city: 'Some City',
+    state: 'NY',
+    postalCode: '11101',
+    controller: {
+        firstName: 'Jane',
+        lastName: 'Controller',
+        title: 'CEO',
+        dateOfBirth: '1980-01-31',
+        ssn: '1234',
+        address: {
+          address1: '1234 Main st',
+          address2: 'Apt 12',
+          city: 'Des Moines',
+          stateProvinceRegion: 'IA',
+          postalCode: '50309',
+          country: 'US',
+        }
+    },
+    businessClassification: '9ed38155-7d6f-11e3-83c3-5404a6144203',
+    businessType: 'llc',
+    businessName: 'Jane Doe Corp',
+    ein: '12-3456789'
+  })
+  .then(function(customerRes){
+    const customerId = customerRes.headers.get("location").split("/").slice(-1)[0]
+    res.status(200).render(`beneficial-owners`, { customerId });
+  });
+});
+
 app.get("/balance-display", function (req, res) {
     generateClientToken(
       "customer.fundingsources.read",
