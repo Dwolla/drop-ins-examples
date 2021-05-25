@@ -19,13 +19,16 @@
     <script src="//cdn.dwolla.com/v2/dwolla-web.js"></script>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/personal-vcr.css">
+
+    <script type="text/javascript" src="cdn.dwolla.com/2/dwolla.js"></script>
+    <script type="module" src="cdn.dwolla.com/2/dwolla-components.js"></script>
     <script>
         dwolla.configure({
             environment: "sandbox",
             styles: "/styles/personal-vcr.css",
-            tokenUrl: () => Promise.resolve(`/tokenUrl`),
-            success: (res) => Promise.resolve(),
-            error: (err) => Promise.resolve()
+            token: () => Promise.resolve({{"MY-TOKEN"}}),
+            success: (res) => Promise.resolve(res),
+            error: (err) => Promise.resolve(err),
         });
     </script>
 </head>
@@ -37,7 +40,10 @@
         <div class="container-sm">
             <h3>Create A Personal VCR</h3>
             <div class="orange-border">
-                <dwolla-personal-vcr terms="https://docs.dwolla.com/" privacy="https://developers.dwolla.com/"> </dwolla-personal-vcr>
+    <dwolla-personal-vcr
+        terms="https://www.yourcompany.com/tos"
+        privacy="https://www.yourcompany.com/privacy">
+    </dwolla-personal-vcr>
             </div>
         </div>
         <div class="container-sm">

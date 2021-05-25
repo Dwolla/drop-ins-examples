@@ -16,16 +16,19 @@
             background-color: #ffffff;
         }
     </style>
-    <script src="//cdn.dwolla.com/v2/dwolla-web.js"></script>
+    <script type="text/javascript" src="https://cdn.dwolla.com/v2/dwolla-web.js"></script>
+    {{!-- <script src="//cdn.dwolla.com/v2/dwolla-web.js"></script> --}}
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/upgrade.css">
+    {{!-- <script type="text/javascript" src="https://cdn.dwolla.com/v2/dwolla-web.js"></script> --}}
+    {{!-- <script type="module" src="cdn.dwolla.com/2/dwolla-components.js"></script> --}}
     <script>
         dwolla.configure({
-              environment: "sandbox",
+            environment: "sandbox",
             styles: "/styles/upgrade.css",
-            token: () => Promise.resolve(`{{ token }}`),
-            success: (res) => Promise.resolve(),
-            error: (err) => Promise.resolve()
+            token: () => Promise.resolve({{"MY-TOKEN"}}),
+            success: (res) => Promise.resolve(res),
+            error: (err) => Promise.resolve(err),
         });
     </script>
 </head>
@@ -37,12 +40,17 @@
         <div class="container-sm">
             <h3>Upgrade Customer</h3>
             <div class="orange-border">
-                <dwolla-customer-update customerId="{{ customer.id }}" firstName="{{ customer.firstName }}"
-                    lastName="{{ customer.lastName }}" email="{{ customer.email }}" terms="https://docs.dwolla.com/"
-                    privacy="https://developers.dwolla.com/">
-                </dwolla-customer-update>
+   <dwolla-customer-update
+        customerId="customerId"
+        firstName="Jack"
+        lastName="Jackson"
+        email="jjackson@dwolla.com"
+        terms="https://www.yourcompany.com/tos"
+        privacy="https://www.yourcompany.com/privacy">
+    </dwolla-customer-update>
             </div>
         </div>
+        {{!--  --}}
         <div class="container-sm">
             <div class="code-container">
                 <h3>Upgrading A Customer With Drop-Ins (Copy + Paste Integration)</h3>
@@ -70,6 +78,7 @@
 </pre>
             </div>
         </div>
+        {{!--  --}}
     </div>
     </div>
 </body>

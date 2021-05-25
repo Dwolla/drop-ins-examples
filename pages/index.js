@@ -4,8 +4,8 @@ const bodyParser = require("body-parser");
 const Client = require("dwolla-v2").Client;
 
 const dwolla = new Client({
-  key: "",
-  secret: "",
+  key: "l14DWp0bwxNugA7JVt6e1Kyp5eb7bJf6LAXG9k7zyBfytVLB97",
+  secret: "JVlua0v99cfRAaHocayFIcAqkPoUZLLVradzeXXP3acnkEX1ZI",
   environment: "sandbox", // defaults to 'production'
 });
 
@@ -30,6 +30,7 @@ app.get("/create-customer", function (req, res) {
       res.status(200).render(`create-customer`, { token: cRes.token });
     });
 });
+
 
 app.get("/upgrade-customer", function (req, res) {
   generateClientToken("customer.update", "0c8bafa5-45ab-4282-8916-cae984ceb147").then(
