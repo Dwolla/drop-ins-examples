@@ -9,6 +9,11 @@
         href="https://cdn.dwolla.com/com/dist/images/favicons/favicon-32x32_a4dac4e7.png">
     <title>Dwolla</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400|Roboto:400,700&display=swap" rel="stylesheet">
+{{!-- include the integreation --}}
+    {{!-- <script type="text/javascript" src="cdn.dwolla.com/2/dwolla.js"></script>
+    <script type="module" src="cdn.dwolla.com/2/dwolla-components.js"></script> --}}
+
+    <script type="text/javascript" src="https://cdn.dwolla.com/v2/dwolla-web.js"></script>
     <style>
         body {
             text-align: center;
@@ -18,14 +23,16 @@
     </style>
     <script src="//cdn.dwolla.com/v2/dwolla-web.js"></script>
     <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/create.css">
+    <link rel="stylesheet" href="/styles/create-custom.css">
     <script>
         dwolla.configure({
-              environment: "sandbox",
-            styles: "/styles/create.css",
-            token: () => Promise.resolve(`{{ token }}`),
-            success: (res) => Promise.resolve(),
-            error: (err) => Promise.resolve()
+            environment: "sandbox",
+            styles: "/styles/create-custom.css",
+            token: () => Promise.resolve({{"MY-TOKEN"}}),
+            success: (res) => Promise.resolve(res),
+            error: (err) => Promise.resolve(err),
+            //success: (res) => alert(res),
+            //error: (err) => alert(err)
         });
     </script>
 </head>
@@ -37,10 +44,15 @@
         <div class="container-sm">
             <h3>Create Customer</h3>
             <div class="orange-border">
-                <dwolla-customer-create terms="https://docs.dwolla.com/" privacy="https://developers.dwolla.com/">
-                </dwolla-customer-create>
+    <dwolla-customer-create
+        type = "receive-only"
+        terms="https://www.yourcompany.com/tos"
+        privacy="https://www.yourcompany.com/privacy">
+       
+    </dwolla-customer-create>
             </div>
         </div>
+{{!-- extra start  --}}
         <div class="container-sm">
             <div class="code-container">
                 <h3>Creating A Customer With Drop-Ins (Copy + Paste Integration)</h3>
@@ -73,6 +85,7 @@
 </pre>
             </div>
         </div>
+{{!-- extra end --}}
     </div>
     </div>
 </body>

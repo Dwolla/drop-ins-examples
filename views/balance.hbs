@@ -22,10 +22,10 @@
     <script>
         dwolla.configure({
             environment: "sandbox",
-            styles: "/styles/balance.css",
-            token: () => Promise.resolve(`{{ token }}`),
-            success: (res) => Promise.resolve(),
-            error: (err) => Promise.resolve()
+            styles: "styles/balance.css",
+            token: () => Promise.resolve("MY_TOKEN"),
+            success: (res) => Promise.resolve(res),
+            error: (err) => Promise.resolve(err),
         });
     </script>
 </head>
