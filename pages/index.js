@@ -78,6 +78,19 @@ app.get("/upload-document", function (req, res) {
   })
 });
 
+app.get("/upload-document-for-existing-customer", function (req, res) {
+  generateClientToken(
+    "customer.documents.create",
+    "26981bca-7a80-4d04-9d21-4c5f44eaef6e"
+  ).then((cRes) => {
+     // This body is hard coded, and will need to be replaced in production
+    const customer = {
+      id:  "26981bca-7a80-4d04-9d21-4c5f44eaef6e"
+    };
+    res.status(200).render(`document`, { customer, token: cRes.token });
+  });
+});
+
 app.get("/personal-vcr-flow", function (req, res) {
     generateClientToken(
       "customer.update",
