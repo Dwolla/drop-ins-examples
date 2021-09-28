@@ -35,7 +35,7 @@ app.get("/upgrade-customer", function (req, res) {
   generateClientToken("customer.update", "0c8bafa5-45ab-4282-8916-cae984ceb147").then(
     (cRes) => {
       const customer = {
-        // This body is hard coded, and will need to be replaced in production
+        // This body is hard coded, and will need to be replaced in your implementation
         id: "0c8bafa5-45ab-4282-8916-cae984ceb147",
         firstName: "Jane",
         lastName: "Doe",
@@ -76,6 +76,20 @@ app.get("/upload-document", function (req, res) {
       res.status(200).render(`document`, { customer, token: cRes.token });
     });     
   })
+});
+
+// This example lets you selectt an existing customer to upload a document
+app.get("/upload-document-for-existing-customer", function (req, res) {
+  generateClientToken(
+    "customer.documents.create",
+    "26981bca-7a80-4d04-9d21-4c5f44eaef6e"
+  ).then((cRes) => {
+     // This body is hard coded, and will need to be replaced in your implementation
+    const customer = {
+      id:  "26981bca-7a80-4d04-9d21-4c5f44eaef6e"
+    };
+    res.status(200).render(`document`, { customer, token: cRes.token });
+  });
 });
 
 app.get("/personal-vcr-flow", function (req, res) {

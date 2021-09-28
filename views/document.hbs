@@ -23,7 +23,7 @@
         dwolla.configure({
             environment: "sandbox",
             styles: "/styles/document.css",
-            token: () => Promise.resolve(`{{ token }}`),
+            tokenUrl: "/tokenUrl",
             success: (res) => Promise.resolve(),
             error: (err) => Promise.resolve()
         });
@@ -65,7 +65,7 @@
             dwolla.configure({
                 environment: "sandbox",
                 styles: "/styles/document-custom.css",
-                token: () => Promise.resolve("MY_TOKEN"),
+                tokenUrl: "/tokenUrl",
                 success: (res) => Promise.resolve(res),
                 error: (err) => Promise.resolve(err),
             });

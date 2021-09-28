@@ -23,7 +23,6 @@
         dwolla.configure({
             environment: "sandbox",
             // styles: "/styles/payin.css",
-            token: () => Promise.resolve(`{{token}}`),
             tokenUrl: "/tokenUrl",
             success: (res) => Promise.resolve(),
             error: (err) => Promise.resolve()
@@ -38,7 +37,7 @@
         <div class="container-sm">
             <h3>Pay In</h3>
             <div class="orange-border">
-                <dwolla-payin customerId="4594a375-ca4c-4220-a36a-fa7ce556449d" blob="{{ blob }}"></dwolla-payin>
+                <dwolla-payin customerId="a2f7f9bc-52ec-4425-8fea-5707896298a7" blob="{{ blob }}" token="{{ token }}"></dwolla-payin>
             </div>
         </div>
         <div class="container-sm">
@@ -54,8 +53,7 @@
         dwolla.configure({
             environment: "sandbox",
             styles: "styles/custom-styles.css",
-            token: () => Promise.resolve("TOKEN"),
-            tokenUrl: () => "/tokenUrl",
+            tokenUrl: "/tokenUrl",
             success: (res) => Promise.resolve(res),
             error: (err) => Promise.resolve(err),
         });
