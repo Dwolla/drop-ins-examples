@@ -78,7 +78,7 @@ app.get("/upload-document", function (req, res) {
   })
 });
 
-// This example lets you selectt an existing customer to upload a document
+// This example lets you select an existing customer to upload a document
 app.get("/upload-document-for-existing-customer", function (req, res) {
   generateClientToken(
     "customer.documents.create",
