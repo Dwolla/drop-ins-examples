@@ -73,7 +73,7 @@ This drop-in component can be used in order to transfer from a Customer funding 
 
 ## Where to find the docs
 
-Visit our Guide or API docs for more additional information. 
+Visit our [Guide](https://developers.dwolla.com/guides/drop-ins), [Concept](https://developers.dwolla.com/concepts/drop-in-components) [API docs](https://developers.dwolla.com/api-reference/drop-in-components) for more additional information. 
 
 ## Support
 
