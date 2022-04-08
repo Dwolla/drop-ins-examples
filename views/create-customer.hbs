@@ -16,14 +16,14 @@
             background-color: #ffffff;
         }
     </style>
-    <script src="//cdn.dwolla.com/v2/dwolla-web.js"></script>
+    <script src="//cdn.dwolla.com/v2.1.8/dwolla-web.js"></script>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/create.css">
     <script>
         dwolla.configure({
               environment: "sandbox",
             styles: "/styles/create.css",
-            token: (req) => Promise.resolve({token: `{{ token }}`}),
+            tokenUrl: "/tokenUrl",
             success: (res) => Promise.resolve(),
             error: (err) => Promise.resolve()
         });
@@ -51,7 +51,7 @@
         dwolla.configure({
             environment: "sandbox",
             styles: "/styles/create-custom.css",
-            token: (req) => Promise.resolve({token: "MY_TOKEN"}),
+            tokenUrl: "/tokenUrl",
             success: (res) => Promise.resolve(res),
             error: (err) => Promise.resolve(err),
         });
