@@ -63,7 +63,7 @@ app.get("/upload-document", function (req, res) {
     dateOfBirth: "1990-03-22",
     ssn: "1111"
   })
-  
+
   .then(function(customerRes){
     const customerId = customerRes.headers.get("location").split("/").slice(-1)[0]
     generateClientToken(
@@ -74,7 +74,7 @@ app.get("/upload-document", function (req, res) {
         id: customerId,
       };
       res.status(200).render(`document`, { customer, token: cRes.token });
-    });     
+    });
   })
 });
 
@@ -194,12 +194,8 @@ app.get("/payin-flow", function (req, res) {
   });
 });
 
-app.get("/iav", function (req, res) {
-  res.status(200).render("iav");
-});
-
-app.get("/add-bank", function (req, res) {
-  res.status(200).render("add-bank");
+app.get("/create-funding-source", function (req, res) {
+  res.status(200).render("create-funding-source", {});
 });
 
 app.get("/styles/:sheet", function (req, res) {
