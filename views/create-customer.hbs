@@ -16,12 +16,12 @@
             background-color: #ffffff;
         }
     </style>
-    <script src="//cdn.dwolla.com/v2.1.8/dwolla-web.js"></script>
+    <script type="text/javascript" src="//cdn.dwolla.com/v2.2.0/dwolla-web.js"></script>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/create.css">
     <script>
         dwolla.configure({
-              environment: "sandbox",
+            environment: "sandbox",
             styles: "/styles/create.css",
             tokenUrl: "/tokenUrl",
             success: (res) => Promise.resolve(),
@@ -45,8 +45,7 @@
             <div class="code-container">
                 <h3>Creating A Customer With Drop-Ins (Copy + Paste Integration)</h3>
                 <pre>
-    &lt;script type="text/javascript" src="cdn.dwolla.com/2/dwolla.js"&gt;&lt;/script&gt;
-    &lt;script type="module" src="cdn.dwolla.com/2/dwolla-components.js"&gt;&lt;/script&gt;
+    &lt;type="text/javascript" src="//cdn.dwolla.com/v2.2.0/dwolla-web.js"&gt;&lt;/script&gt;
     &lt;script&gt;
         dwolla.configure({
             environment: "sandbox",
@@ -68,7 +67,7 @@
         type = "receive-only"
         terms="https://www.yourcompany.com/tos"
         privacy="https://www.yourcompany.com/privacy"&gt;
-        
+
     &lt;/dwolla-customer-create&gt;
 </pre>
             </div>

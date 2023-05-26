@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="https://cdn.dwolla.com/com/dist/images/favicons/favicon-16x16_d8c975a0.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="https://cdn.dwolla.com/com/dist/images/favicons/favicon-32x32_a4dac4e7.png">
+    <title>Dwolla</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            background-color: #ffffff;
+        }
+    </style>
+    <script type="text/javascript" src="//cdn.dwolla.com/v2.2.0/dwolla-web.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/create.css">
+    <script>
+        dwolla.configure({
+            environment: "sandbox",
+            styles: "/styles/create.css",
+            tokenUrl: "/tokenUrl",
+            success: (res) => Promise.resolve(),
+            error: (err) => Promise.resolve()
+        });
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <div class="banner-image"><img alt="Dwolla Logo"
+                                   src="https://slack-integration-sandbox.dwolla.com/images/dwolla-logo-white.svg"></div>
+    <div class="container-sm">
+        <h3>Balance Display</h3>
+        <div class="orange-border">
+            <dwolla-funding-source-create customerId={{ customer.id }}></dwolla-funding-source-create>
+        </div>
+    </div>
+    <div class="container-sm">
+        <div class="code-container">
+            <h3>Creating a Funding Source With Drop-Ins (Copy + Paste Integration)</h3>
+
+            <pre>
+    &lt;type="text/javascript" src="//cdn.dwolla.com/v2.2.0/dwolla-web.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        dwolla.configure({
+            environment: "sandbox",
+            styles: "styles/create-funding-sources-custom.css",
+            tokenUrl: "/tokenUrl",
+            success: (res) => Promise.resolve(res),
+            error: (err) => Promise.resolve(err),
+        });
+    &lt;/script&gt;
+
+    &lt;!-- Example without automatic micro-deposit initiation -->"
+    &lt;dwolla-funding-source-create customerId="{{ customerId }}">
+    &lt;/dwolla-funding-source-create>
+
+    &lt;!-- Example with automatic micro-deposit initiation -->
+    &lt;dwolla-funding-source-create
+            customerId="{{ customerId }}"
+            initiateMicroDeposits
+    >
+    &lt;/dwolla-funding-source-create>
+</pre>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>

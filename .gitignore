@@ -4,6 +4,9 @@ node_modules/
 # Yarn
 yarn-error.log
 
+# PNPM
+pnpm-lock.yaml
+
 # Lerna
 lerna-error.log
 
@@ -14,3 +17,4 @@ dist/
 .next/
 
 *.DS_Store
+.idea/
